@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
+            } else {
+                entry.target.classList.remove('fade-in');
             }
         });
     }, observerOptions);
 
-    // Observe all h1, .graphic, .caption, and p elements
-    document.querySelectorAll('.month h1, .graphic, .caption, .month p').forEach(el => {
+    // Observe all h1, .graphic, .caption-group, and p elements
+    document.querySelectorAll('.month h1, .graphic, .caption-group, .month p').forEach(el => {
         observer.observe(el);
     });
 });
